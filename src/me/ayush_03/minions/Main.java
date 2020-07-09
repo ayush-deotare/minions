@@ -75,12 +75,6 @@ public class Main extends JavaPlugin implements Listener {
 		for (MinionType type : MinionType.values()) {
 			FileManager.getInstance().getMinionsFile(type).delete();
 		}
-		
-//		for (String str : getConfig().getKeys(false)) {
-//			BlockMinion bm = (BlockMinion) getConfig().get(str);
-//			MINIONS.add(bm);
-//			bm.breakBlock();
-//		}
 
 		new BukkitRunnable() {
 
@@ -155,45 +149,11 @@ public class Main extends JavaPlugin implements Listener {
 				e.printStackTrace();
 			}
 
-//			if (m.getType() == MinionType.BLOCKS) {
-//				BlockMinion bm = (BlockMinion) m;
-//				getConfig().set(m.getID() + "", bm);
-//			}
 		}
 
 		saveConfig();
 
 	}
-
-//	@EventHandler
-//	public void onPlace(BlockPlaceEvent e) {
-//		if (e.getBlock().getType() == Material.COBBLESTONE) {
-//
-//			BlockMinion m = new BlockMinion(MINIONS.size() + 1, e.getBlock().getLocation(),
-//					e.getPlayer().getUniqueId());
-//			m.spawn();
-//			MINIONS.add(m);
-//		}
-//
-//		if (e.getBlock().getType() == Material.STONE) {
-//			CropMinion cm = new CropMinion(MINIONS.size() + 1, e.getBlock().getLocation(), e.getPlayer().getUniqueId());
-//			cm.spawn();
-//			MINIONS.add(cm);
-//		}
-//		
-//		if (e.getBlock().getType() == Material.OAK_LOG) {
-//			MobMinion cm = new MobMinion(MINIONS.size() + 1, e.getBlock().getLocation(), e.getPlayer().getUniqueId());
-//			cm.spawn();
-//			MINIONS.add(cm);
-//		}
-//	}
-
-//	@EventHandler
-//	public void onInteract(PlayerInteractEvent e) {
-//		if (e.getAction() == Action.RIGHT_CLICK_BLOCK) {
-//			e.getPlayer().sendMessage(e.getClickedBlock().getType().toString());
-//		}
-//	}
 
 	@EventHandler
 	public void onRightClick(PlayerInteractAtEntityEvent e) {
@@ -203,9 +163,6 @@ public class Main extends JavaPlugin implements Listener {
 			Player p = e.getPlayer();
 
 			for (Minion m : MINIONS) {
-
-//				if (m instanceof BlockMinion) {
-//					BlockMinion bm = (BlockMinion) m;
 
 				Location l1 = en.getLocation();
 				Location l2 = m.getLocation();
@@ -225,8 +182,6 @@ public class Main extends JavaPlugin implements Listener {
 					}
 
 				}
-
-//				}
 
 			}
 		}
